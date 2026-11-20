@@ -1,0 +1,1111 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+    --creme: #f6f1ea;
+    --papier: #fffdf9;
+    --sand: #ede4d6;
+    --linie: #e2d8c9;
+    --tinte: #2a2520;
+    --tinte-hell: #6e645a;
+    --dunkel: #1c1916;
+    --gold: #b8925a;
+    --gold-hell: #f3eadb;
+    --akzent: #9e4a2c;
+    --akzent-dunkel: #7f3a22;
+    --gruen: #2f6b4f;
+    --gruen-hell: #e4f0e8;
+    --rot: #a3352b;
+    --rot-hell: #f8e6e3;
+    --grau: #b5aca2;
+    --grau-hell: #f1ece5;
+    --radius: 14px;
+    --schatten: 0 10px 30px rgba(42, 37, 32, 0.08);
+    --schrift-titel: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --schrift-text: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--creme);
+    color: var(--tinte);
+    font-family: var(--schrift-text);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+main {
+    flex: 1;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--schrift-titel);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--dunkel);
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+}
+
+a {
+    color: var(--akzent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.kopf {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px clamp(16px, 5vw, 64px);
+    background-color: var(--dunkel);
+    border-bottom: 1px solid rgba(184, 146, 90, 0.35);
+}
+
+.logo {
+    font-family: var(--schrift-titel);
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+.kopf nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    align-items: center;
+}
+
+.kopf nav a {
+    color: #e9e1d5;
+    font-size: 0.95rem;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.kopf nav a:hover,
+.kopf nav a[aria-current="page"] {
+    color: #fff;
+    text-decoration: none;
+    border-bottom-color: var(--gold);
+}
+
+.fuss {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 32px;
+    padding: 28px 16px;
+    margin-top: 56px;
+    background-color: var(--dunkel);
+    color: #b9afa3;
+    font-size: 0.9rem;
+}
+
+.fuss a {
+    color: var(--gold);
+}
+
+.inhalt {
+    width: min(1140px, 100% - 32px);
+    margin: 0 auto;
+}
+
+.inhalt.schmal {
+    width: min(640px, 100% - 32px);
+}
+
+.inhalt.breit {
+    width: min(1320px, 100% - 32px);
+}
+
+.seitenkopf {
+    margin: 40px 0 24px;
+}
+
+.seitenkopf p {
+    color: var(--tinte-hell);
+    margin-top: 8px;
+    max-width: 62ch;
+}
+
+.karte {
+    background-color: var(--papier);
+    border: 1px solid var(--linie);
+    border-radius: var(--radius);
+    box-shadow: var(--schatten);
+    padding: clamp(18px, 3vw, 28px);
+    margin-bottom: 22px;
+}
+
+.hinweis {
+    color: var(--tinte-hell);
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+.knopf {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border: 1px solid var(--akzent);
+    border-radius: 999px;
+    background-color: var(--akzent);
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+.knopf {
+    white-space: nowrap;
+}
+
+.knopf:hover {
+    background-color: var(--akzent-dunkel);
+    text-decoration: none;
+}
+
+.knopf:active {
+    transform: translateY(1px);
+}
+
+.knopf:disabled {
+    opacity: 0.55;
+}
+
+.knopf-hell {
+    background-color: transparent;
+    color: var(--akzent);
+}
+
+.knopf-hell:hover {
+    background-color: var(--gold-hell);
+    color: var(--akzent-dunkel);
+}
+
+.knopf-breit {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.knopf-reihe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.feld {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+    border: 0;
+    padding: 0;
+}
+
+.feld label,
+.feld legend {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--tinte-hell);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--linie);
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--tinte);
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184, 146, 90, 0.25);
+}
+
+#meldung:empty {
+    display: none;
+}
+
+#meldung {
+    margin-top: 16px;
+}
+
+.fehler,
+.erfolg,
+.hinweis-box {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 0.95rem;
+}
+
+.fehler {
+    background-color: var(--rot-hell);
+    border-color: #e9bdb6;
+    color: var(--rot);
+}
+
+.erfolg {
+    background-color: var(--gruen-hell);
+    border-color: #bcd8c6;
+    color: var(--gruen);
+}
+
+.hinweis-box {
+    background-color: var(--gold-hell);
+    border-color: #e4d3b6;
+    color: #7a5b2e;
+}
+
+.erfolg code {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 12px;
+    background-color: #fff;
+    border: 1px dashed var(--gruen);
+    border-radius: 8px;
+    color: var(--tinte);
+    font-size: 0.95rem;
+    word-break: break-all;
+    user-select: all;
+}
+
+.erfolg p + p {
+    margin-top: 4px;
+}
+
+.erfolg a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--gruen);
+    font-weight: 600;
+}
+
+.hero {
+    width: min(1140px, 100% - 32px);
+    margin: 48px auto 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+}
+
+.unterzeile {
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    margin-bottom: 18px;
+}
+
+.hero-text p {
+    color: var(--tinte-hell);
+    max-width: 46ch;
+}
+
+.hero-knoepfe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-bild img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 24px 50px rgba(28, 25, 22, 0.25);
+}
+
+.zwei-spalten {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.leistung-liste {
+    display: flex;
+    flex-direction: column;
+}
+
+.leistung_all {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--linie);
+}
+
+.leistung_all:last-child {
+    border-bottom: 0;
+}
+
+.leistung_all div:last-child {
+    color: var(--tinte-hell);
+    white-space: nowrap;
+}
+
+.kontakt p + p {
+    margin-top: 8px;
+}
+
+.schritte {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0 0 24px;
+    list-style: none;
+    counter-reset: schritt;
+    flex-wrap: wrap;
+}
+
+.schritte li {
+    counter-increment: schritt;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 6px;
+    border-radius: 999px;
+    background-color: var(--papier);
+    border: 1px solid var(--linie);
+    color: var(--tinte-hell);
+    font-size: 0.9rem;
+}
+
+.schritte li::before {
+    content: counter(schritt);
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--sand);
+    color: var(--tinte);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.schritte li.erledigt {
+    color: var(--gruen);
+    border-color: #bcd8c6;
+}
+
+.schritte li.erledigt::before {
+    content: "✓";
+    background-color: var(--gruen);
+    color: #fff;
+}
+
+.buchung-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 22px;
+    align-items: start;
+}
+
+.schritt-titel {
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+}
+
+#terminLeistung_kontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 12px;
+}
+
+.leistung_taste {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 16px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid var(--linie);
+    border-radius: 12px;
+    color: var(--tinte);
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.leistung_taste:hover {
+    border-color: var(--gold);
+    box-shadow: 0 6px 16px rgba(42, 37, 32, 0.08);
+}
+
+.leistung_titel {
+    font-weight: 600;
+}
+
+.lesitung_preisZeit {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+    color: var(--tinte-hell);
+    font-size: 0.9rem;
+}
+
+.leistung_taste.gewaehlt {
+    background-color: #fbf1ec;
+    border-color: var(--akzent);
+    box-shadow: inset 0 0 0 1px var(--akzent);
+}
+
+.leistung_taste.gewaehlt .lesitung_preisZeit {
+    color: var(--akzent-dunkel);
+}
+
+#terminPerson_kontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mitarbeiter_taste {
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--linie);
+    background-color: var(--grau-hell);
+    color: var(--grau);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.mitarbeiter_taste.frei {
+    background-color: var(--gruen-hell);
+    border-color: #a9cdb7;
+    color: var(--gruen);
+}
+
+.mitarbeiter_taste.frei:hover {
+    border-color: var(--gruen);
+}
+
+.mitarbeiter_taste.gewaehlt {
+    background-color: var(--dunkel);
+    border-color: var(--dunkel);
+    color: #fff;
+}
+
+.datum-paging {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.datum-paging button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--linie);
+    background-color: #fff;
+    color: var(--tinte);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.datum-paging button:hover:not(:disabled) {
+    border-color: var(--gold);
+}
+
+.datum-paging button:disabled {
+    opacity: 0.35;
+}
+
+#anzeige_datum {
+    font-family: var(--schrift-titel);
+    font-size: 1.35rem;
+    font-weight: 600;
+    min-width: 230px;
+    text-align: center;
+}
+
+#zeiten_kontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+    gap: 8px;
+}
+
+.zeitTaste {
+    padding: 9px 0;
+    border-radius: 8px;
+    border: 1px solid var(--linie);
+    background-color: var(--grau-hell);
+    color: var(--grau);
+    font-size: 0.92rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.zeitTaste:disabled {
+    text-decoration: line-through;
+}
+
+.zeitTaste.frei {
+    background-color: var(--gruen-hell);
+    border-color: #a9cdb7;
+    color: var(--gruen);
+    text-decoration: none;
+}
+
+.zeitTaste.frei:hover {
+    border-color: var(--gruen);
+}
+
+.zeitTaste.gewaehlt {
+    background-color: var(--akzent);
+    border-color: var(--akzent);
+    color: #fff;
+}
+
+.geschlossen {
+    grid-column: 1 / -1;
+    padding: 18px;
+    text-align: center;
+    background-color: var(--grau-hell);
+    border-radius: 10px;
+    color: var(--tinte-hell);
+}
+
+.zusammenfassung-karte {
+    position: sticky;
+    top: 92px;
+}
+
+#zusammenfassung {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--linie);
+}
+
+#zusammenfassung dt {
+    color: var(--tinte-hell);
+    font-size: 0.9rem;
+}
+
+#zusammenfassung dd {
+    text-align: right;
+    font-weight: 500;
+}
+
+#frage_kontainer {
+    margin-bottom: 16px;
+}
+
+#frage_kontainer p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#frage_kontainer .knopf {
+    flex: 1;
+}
+
+.login {
+    display: grid;
+    place-items: center;
+    padding: 56px 0;
+}
+
+.login-karte {
+    width: min(420px, 100%);
+}
+
+.login-karte h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.login-karte p {
+    color: var(--tinte-hell);
+    margin-bottom: 20px;
+}
+
+.reiter {
+    gap: 8px !important;
+}
+
+.reiter-knopf {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(233, 225, 213, 0.25);
+    background-color: transparent;
+    color: #e9e1d5;
+    font-size: 0.92rem;
+}
+
+.reiter-knopf:hover {
+    border-color: var(--gold);
+}
+
+.reiter-knopf.aktiv {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--dunkel);
+    font-weight: 600;
+}
+
+.reiter-knopf.abmelden {
+    border-color: transparent;
+    text-decoration: underline;
+}
+
+.tag-leiste {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    margin: 36px 0 8px;
+}
+
+.tag-leiste h1 {
+    text-align: center;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+#tag_zaehler {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.spalten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
+.spalte {
+    background-color: var(--papier);
+    border: 1px solid var(--linie);
+    border-radius: var(--radius);
+    padding: 14px;
+    box-shadow: var(--schatten);
+}
+
+.spalte-kopf {
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.leer {
+    text-align: center;
+    color: var(--grau);
+    padding: 18px 0;
+}
+
+.termin-karte {
+    position: relative;
+    padding: 12px 12px 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--linie);
+    border-left: 5px solid var(--gold);
+    background-color: #fff;
+}
+
+.termin-zeit {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.termin-kunde {
+    font-weight: 500;
+}
+
+.termin-telefon {
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.termin-leistung {
+    color: var(--tinte-hell);
+    font-size: 0.9rem;
+}
+
+.status-schild {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: var(--gold-hell);
+    color: #7a5b2e;
+}
+
+.termin-karte.status-erledigt {
+    border-left-color: var(--gruen);
+    background-color: #fbfdfb;
+}
+
+.status-schild.status-erledigt {
+    background-color: var(--gruen-hell);
+    color: var(--gruen);
+}
+
+.termin-karte.status-storniert {
+    border-left-color: var(--grau);
+    background-color: var(--grau-hell);
+    color: var(--tinte-hell);
+}
+
+.termin-karte.status-storniert .termin-zeit,
+.termin-karte.status-storniert .termin-kunde {
+    text-decoration: line-through;
+}
+
+.status-schild.status-storniert {
+    background-color: #e6e0d8;
+    color: var(--tinte-hell);
+}
+
+.termin-karte.status-nicht-erschienen {
+    border-left-color: var(--rot);
+}
+
+.status-schild.status-nicht-erschienen {
+    background-color: var(--rot-hell);
+    color: var(--rot);
+}
+
+.termin-knoepfe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.mini-knopf {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--linie);
+    background-color: #fff;
+    color: var(--tinte);
+    font-size: 0.82rem;
+}
+
+.mini-knopf:hover {
+    border-color: var(--gold);
+    background-color: var(--gold-hell);
+}
+
+.mini-knopf.gefahr {
+    color: var(--rot);
+}
+
+.mini-knopf.gefahr:hover {
+    border-color: var(--rot);
+    background-color: var(--rot-hell);
+}
+
+.legende {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    margin-top: 18px;
+    color: var(--tinte-hell);
+    font-size: 0.85rem;
+}
+
+.punkt {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-left: 8px;
+    background-color: var(--gold);
+}
+
+.punkt.status-erledigt {
+    background-color: var(--gruen);
+}
+
+.punkt.status-nicht-erschienen {
+    background-color: var(--rot);
+}
+
+.punkt.status-storniert {
+    background-color: var(--grau);
+}
+
+.leistung-tabelle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leistung-zeile {
+    display: grid;
+    grid-template-columns: minmax(160px, 2fr) 110px 110px 110px auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.mini-feld {
+    display: block;
+}
+
+.mini-feld span {
+    display: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--tinte-hell);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.leistung-zeile.kopfzeile {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--tinte-hell);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.leistung-zeile.inaktiv input[type="text"] {
+    color: var(--grau);
+}
+
+.schalter,
+.auswahl {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.schalter input,
+.auswahl input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--akzent);
+}
+
+.neue-leistung {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0 14px;
+    align-items: end;
+}
+
+.neue-leistung fieldset,
+.neue-leistung .knopf {
+    grid-column: 1 / -1;
+}
+
+.neue-leistung .knopf {
+    justify-self: start;
+}
+
+.feld .auswahl {
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--tinte);
+}
+
+.auswahl-liste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-top: 6px;
+}
+
+@media (max-width: 960px) {
+    .buchung-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .zusammenfassung-karte {
+        position: static;
+    }
+
+    .hero,
+    .zwei-spalten {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        margin-top: 28px;
+    }
+
+    .hero-bild {
+        order: -1;
+    }
+
+    .leistung-zeile {
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 12px;
+        border-bottom: 1px dashed var(--linie);
+    }
+
+    .leistung-zeile .mini-feld:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .mini-feld {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .mini-feld span {
+        display: block;
+    }
+
+    .leistung-zeile.kopfzeile {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+
+    .kopf {
+        justify-content: center;
+        padding: 12px 16px;
+    }
+
+    .kopf nav {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .seitenkopf {
+        margin-top: 28px;
+    }
+
+    #terminLeistung_kontainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #zeiten_kontainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #anzeige_datum {
+        min-width: 0;
+        flex: 1;
+        font-size: 1.15rem;
+    }
+
+    .tag-leiste {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tag-leiste h1 {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .tag-leiste .knopf-reihe {
+        justify-content: flex-end;
+    }
+
+    .neue-leistung {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .neue-leistung .feld:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .hero-knoepfe .knopf {
+        flex: 1 1 160px;
+    }
+}

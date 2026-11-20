@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js"></script>
+    <title>Schnittpunkt · Friseursalon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/main.js" type="module"></script>
 </head>
+
 <body>
-    <h1>mein Salon</h1>
+    <header class="kopf">
+        <a class="logo" href="index.html">Schnitt<span>punkt</span></a>
+        <nav>
+            <a href="buchung.html">Termin buchen</a>
+            <a href="stornieren.html">Termin stornieren</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="anfang" class="hero">
+            <div class="hero-text">
+                <p class="unterzeile">Friseursalon · Styling · Farbe</p>
+                <h1>Herzlich willkommen in unserem Salon</h1>
+                <p>Schnitt, Farbe oder Bartpflege: Wählen Sie Ihre Leistung, Ihre Wunschperson und eine freie Uhrzeit. In zwei Minuten ist Ihr Termin gebucht.</p>
+                <div class="hero-knoepfe">
+                    <a class="knopf" href="buchung.html">Termin buchen</a>
+                    <a class="knopf knopf-hell" href="stornieren.html">Termin stornieren</a>
+                </div>
+            </div>
+            <div id="bilderBereich" class="hero-bild">
+                <img src="salon.jpg" alt="Außenansicht des Friseursalons Schnittpunkt">
+            </div>
+        </section>
+
+        <div id="kontainer" class="inhalt zwei-spalten">
+            <section id="leistungen" class="karte">
+                <h2>Unsere Leistungen</h2>
+                <div id="leistungListe" class="leistung-liste"></div>
+            </section>
+            <section class="karte">
+                <h2>Öffnungszeiten</h2>
+                <div id="oeffnungsListe" class="leistung-liste"></div>
+                <p class="hinweis">Sonntag und Montag geschlossen.</p>
+            </section>
+        </div>
+
+        <section id="kontakt" class="inhalt karte kontakt">
+            <h2>Kontakt</h2>
+            <p>Online buchen geht bis 2 Stunden vor dem Termin. Kurzfristige Termine und Stornierungen weniger als 24 Stunden vorher bitte telefonisch.</p>
+            <p><strong>Telefon:</strong> <a href="tel:+493012345678">030 123 456 78</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/" target="_blank" rel="noopener">Folgen Sie uns auf Instagram</a></p>
+        </section>
+    </main>
+
+    <footer class="fuss">
+        <div>© Schnittpunkt 2020-2026</div>
+        <div>AGB</div>
+        <div>Datenschutz</div>
+        <div>Impressum</div>
+        <a href="salon_logging.html">Salon-Bereich</a>
+    </footer>
 </body>
+
 </html>
