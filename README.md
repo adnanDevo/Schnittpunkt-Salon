@@ -165,4 +165,4 @@ Das Gesprächsprotokoll lässt einige Punkte offen. So wurden sie gelöst:
 
 ## Hinweis
 
-Bei der Umsetzung wurde KI unterstützend eingesetzt. Das Foto auf der Startseite ist KI-generiert.
+Das Foto auf der Startseite ist KI-generiert.
