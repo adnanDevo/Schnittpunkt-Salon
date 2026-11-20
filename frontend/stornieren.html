@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termin stornieren · Schnittpunkt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/stornieren.js" type="module"></script>
+</head>
+
+<body>
+    <header class="kopf">
+        <a class="logo" href="index.html">Schnitt<span>punkt</span></a>
+        <nav>
+            <a href="buchung.html">Termin buchen</a>
+            <a href="stornieren.html" aria-current="page">Termin stornieren</a>
+            <a href="index.html#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <main class="inhalt schmal">
+        <div class="seitenkopf">
+            <h1>Termin stornieren</h1>
+            <p>Geben Sie den Stornocode aus Ihrer Buchungsbestätigung ein. Online stornieren geht bis 24 Stunden vor dem Termin, danach bitte telefonisch unter <a href="tel:+493012345678">030 123 456 78</a>.</p>
+        </div>
+
+        <section class="karte">
+            <form id="storno_formular">
+                <div class="feld">
+                    <label for="stornocode">Stornocode</label>
+                    <input id="stornocode" type="text" maxlength="36" placeholder="z. B. 550e8400-e29b-41d4-a716-446655440001" autocomplete="off" required>
+                </div>
+                <button id="btn_stornieren" class="knopf knopf-breit" type="submit">Termin stornieren</button>
+            </form>
+            <div id="meldung" role="status"></div>
+        </section>
+    </main>
+
+    <footer class="fuss">
+        <div>© Schnittpunkt 2020-2026</div>
+        <div>AGB</div>
+        <div>Datenschutz</div>
+        <div>Impressum</div>
+        <a href="salon_logging.html">Salon-Bereich</a>
+    </footer>
+</body>
+
+</html>
