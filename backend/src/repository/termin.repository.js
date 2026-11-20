@@ -39,8 +39,10 @@ export async function terminMitTransaktionSpeichern(daten) {
         let kundeId
         if (kunden.length > 0) {
             kundeId = kunden[0].idKunde
-            await connection.execute(`UPDATE kunde SET kunde_name = ?, telefonnummer = ? WHERE idKunde = ?`,
-                [daten.kunde_name, daten.telefonnummer, kundeId])
+            if (daten.kunde_name) {
+                await connection.execute(`UPDATE kunde SET kunde_name = ?, telefonnummer = ? WHERE idKunde = ?`,
+                    [daten.kunde_name, daten.telefonnummer, kundeId])
+            }
         } else {
             const [neuerKunde] = await connection.execute(`INSERT INTO kunde(kunde_name, telefonnummer, mail) VALUES (?, ?, ?)`,
                 [daten.kunde_name, daten.telefonnummer, daten.mail])

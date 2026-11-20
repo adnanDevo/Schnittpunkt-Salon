@@ -4,6 +4,11 @@ export async function getAlleMitarbeiter() {
     const [rows] = await pool.execute(`SELECT * FROM mitarbeiter `)
     return rows
 }
+export async function getAktiveMitarbeiter() {
+    const [rows] = await pool.execute(`SELECT idMitarbeiter, mitarbeiter_name FROM mitarbeiter
+        WHERE mitarbeiter_status = 'aktiv' ORDER BY idMitarbeiter`)
+    return rows
+}
 export async function neuerMitarbeiteranlegen(person) {
     const [result] = await pool.execute(`INSERT INTO mitarbeiter(mitarbeiter_name,mitarbeiter_status)
         VALUES (?,?)`,[person.mitarbeiter_name,person.mitarbeiter_status ?? 'aktiv'])

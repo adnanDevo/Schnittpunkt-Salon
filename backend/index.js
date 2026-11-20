@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import { fileURLToPath } from "url"
 import {router as meldungRouter} from "./src/router/meldung.router.js"
 import {router as kundeRouter} from "./src/router/kunde.router.js"
 import {router as mitarbeiterRouter} from "./src/router/mitarbeiter.router.js"
@@ -12,7 +13,7 @@ const PORT = process.env.PORT || 8080
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: "http://127.0.0.1:5500",
+    origin: ["http://127.0.0.1:5500", "http://localhost:5500", "http://127.0.0.1:3000", "http://localhost:3000"],
     credentials: true
 }))
 app.use(cookieParser())
@@ -23,6 +24,8 @@ app.use("/api", mitarbeiterRouter)
 app.use("/api", leistungRouter)
 app.use("/api", oeffnungstagRouter)
 app.use("/api", terminRouter)
+
+app.use(express.static(fileURLToPath(new URL("../frontend", import.meta.url))))
 
 app.use((req, res) => {
     res.status(404).json({ error: "Nicht gefunden" })

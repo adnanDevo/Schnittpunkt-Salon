@@ -1,11 +1,11 @@
 import express from "express"
-import { alleMitarbeiterHolen, neuMitarbeiterErstellen, personEntfernen, mitarbeiterUndLeistungen, mitarbeiterBietenLeistung, nochLeistungZuMitarbeiter, lesitungVonMitarbeiterLoeschen, holeFreieTagen, freierTagAnlegen, freiTagLoeschen } from "../controller/mitarbeiter.controller.js"
+import { alleMitarbeiterHolen, aktiveMitarbeiterHolen, neuMitarbeiterErstellen, personEntfernen, mitarbeiterUndLeistungen, mitarbeiterBietenLeistung, nochLeistungZuMitarbeiter, lesitungVonMitarbeiterLoeschen, holeFreieTagen, freierTagAnlegen, freiTagLoeschen } from "../controller/mitarbeiter.controller.js"
 import { salonAuth } from "../util/salonAuth.js"
 
 export const router = new express.Router()
 
 router.get("/mitarbeiter_leistung/leistung/:id", mitarbeiterBietenLeistung)
-
+router.get("/mitarbeiter/aktiv", aktiveMitarbeiterHolen)
 router.get("/mitarbeiter", salonAuth, alleMitarbeiterHolen)
 router.post("/mitarbeiter/neu", salonAuth, neuMitarbeiterErstellen)
 router.patch("/mitarbeiter/inaktive/:id", salonAuth, personEntfernen)

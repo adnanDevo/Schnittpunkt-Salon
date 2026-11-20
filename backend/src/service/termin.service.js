@@ -6,6 +6,7 @@ import { getFreieTage, getMitarbeiterProLeistung, istLeistungBeiMitarbeiter } fr
 import { HttpFehler } from "../util/fehler.js"
 import { pflichtText, positiveGanzzahl, istEmail, istTelefon, istDatum, istUhrzeit } from "../util/validierung.js"
 import { addMinuten, ueberschneidet, parseLokal, toDbDatetime, pruefeBuchungszeit, liegtInOeffnungszeit, wochentagVon } from "../util/zeit.js"
+import { getKundeBeiEmail } from "../repository/kunde.repository.js"
 
 const STORNO_FRIST_MS = 24 * 60 * 60 * 1000
 const STATUS_ERLAUBT = ["offen", "erledigt", "nicht erschienen", "storniert"]
@@ -125,9 +126,16 @@ export async function egalWirdAusgewaehlt(ids) {
 }
 
 export async function terminBuchen(daten) {
-    const kunde_name = pflichtText(daten.kunde_name, "Name")
-    const telefonnummer = istTelefon(daten.telefonnummer)
     const mail = istEmail(daten.mail)
+    const neuerKunde = daten.kunde_name !== undefined || daten.telefonnummer !== undefined
+    const kunde_name = neuerKunde ? pflichtText(daten.kunde_name, "Name") : null
+    const telefonnummer = neuerKunde ? istTelefon(daten.telefonnummer) : null
+    if (!neuerKunde) {
+        const vorhanden = await getKundeBeiEmail(mail)
+        if (vorhanden.length === 0) {
+            throw new HttpFehler(404, "Diese E-Mail ist uns nicht bekannt. Bitte geben Sie Name und Telefonnummer an.")
+        }
+    }
     const idLeistung = positiveGanzzahl(daten.idLeistung, "Leistung")
     const datum = istDatum(daten.datum)
     const uhrzeit = istUhrzeit(daten.uhrzeit)

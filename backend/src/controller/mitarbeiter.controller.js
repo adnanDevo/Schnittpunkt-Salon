@@ -1,10 +1,13 @@
-import { alleMitarbeiter, mitarbeiterAnlegen, nameEntfernen, mitarbeiterLeistungen, welcherMitarbeiterProLeistung, mitarbeiterLeistungZufuegen, mitarbeiterLeistungEntferen, freietagen, neuerFreierTag, tagEntfernen } from "../service/mitarbeiter.service.js"
+import { alleMitarbeiter, aktiveMitarbeiter, mitarbeiterAnlegen, nameEntfernen, mitarbeiterLeistungen, welcherMitarbeiterProLeistung, mitarbeiterLeistungZufuegen, mitarbeiterLeistungEntferen, freietagen, neuerFreierTag, tagEntfernen } from "../service/mitarbeiter.service.js"
 
 export async function alleMitarbeiterHolen(req,res) {
     const result = await alleMitarbeiter()
     return res.status(200).json(result)
 }
-
+export async function aktiveMitarbeiterHolen(req,res) {
+    const ergebnis = await aktiveMitarbeiter()
+    return res.status(200).json(ergebnis)
+}
 export async function neuMitarbeiterErstellen(req,res) {
     const ergebnis = await mitarbeiterAnlegen(req.body ?? {})
     return res.status(201).json(ergebnis)

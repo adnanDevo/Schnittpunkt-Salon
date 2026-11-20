@@ -1,4 +1,4 @@
-import { getAlleMitarbeiter, neuerMitarbeiteranlegen, mitarbeiterEntfernen, getLeistungBeiMitarbeiter, getMitarbeiterProLeistung, leistungZuMitarbeiter, leistungVonMitarbeiterEntfernen, getFreieTage, freienTagHinzufuegen, freienTagEntfernen } from "../repository/mitarbeiter.repository.js"
+import { getAlleMitarbeiter, neuerMitarbeiteranlegen, getAktiveMitarbeiter, mitarbeiterEntfernen, getLeistungBeiMitarbeiter, getMitarbeiterProLeistung, leistungZuMitarbeiter, leistungVonMitarbeiterEntfernen, getFreieTage, freienTagHinzufuegen, freienTagEntfernen } from "../repository/mitarbeiter.repository.js"
 import { pflichtText, positiveGanzzahl } from "../util/validierung.js"
 
 export async function  alleMitarbeiter() {
@@ -6,7 +6,10 @@ export async function  alleMitarbeiter() {
     return alle
 
 }
-
+export async function aktiveMitarbeiter() {
+    const ergebnis = await getAktiveMitarbeiter()
+    return ergebnis
+}
 export async function mitarbeiterAnlegen(person) {
     const mitarbeiter = await neuerMitarbeiteranlegen({
         mitarbeiter_name: pflichtText(person.mitarbeiter_name, "Name"),
