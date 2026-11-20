@@ -20,7 +20,7 @@ Webanwendung für den Friseursalon Schnittpunkt. Kundinnen und Kunden buchen onl
 ## Umgesetzte Bonuspunkte
 
 - Freie Tage pro Mitarbeiter, die bei den freien Zeiten und beim Buchen berücksichtigt werden (Tabelle `freietagen`)
-- Status „nicht erschienen“ im Salon-Bereich (ohne Auswertung)
+- Status „nicht erschienen“ im Salon-Bereich 
 - Responsive Darstellung für Smartphones
 
 ## Technik
