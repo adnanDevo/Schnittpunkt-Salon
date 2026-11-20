@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termin buchen · Schnittpunkt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/buchung.js" type="module"></script>
+</head>
+
+<body>
+    <header class="kopf">
+        <a class="logo" href="index.html">Schnitt<span>punkt</span></a>
+        <nav>
+            <a href="buchung.html" aria-current="page">Termin buchen</a>
+            <a href="stornieren.html">Termin stornieren</a>
+            <a href="index.html#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <main class="inhalt">
+        <div id="anfang" class="seitenkopf">
+            <h1>Termin online buchen</h1>
+            <p>Dienstag bis Freitag 9–18 Uhr, Samstag 9–14 Uhr</p>
+        </div>
+
+        <ol id="tasks" class="schritte">
+            <li data-schritt="leistung">Leistung</li>
+            <li data-schritt="person">Person</li>
+            <li data-schritt="zeit">Zeit</li>
+            <li data-schritt="daten">Ihre Daten</li>
+        </ol>
+
+        <div class="buchung-layout">
+            <div class="buchung-schritte">
+                <section class="karte">
+                    <h2 class="schritt-titel">1 · Leistung</h2>
+                    <div id="terminLeistung_kontainer"></div>
+                </section>
+
+                <section class="karte">
+                    <h2 class="schritt-titel">2 · Person</h2>
+                    <div id="terminPerson_kontainer"></div>
+                </section>
+
+                <section class="karte">
+                    <h2 class="schritt-titel">3 · Datum und Uhrzeit</h2>
+                    <div id="terminDatumzeit_kontainer">
+                        <div class="datum-paging">
+                            <button id="btn-zurueck" type="button" aria-label="Vorheriger Tag">&lsaquo;</button>
+                            <span id="anzeige_datum"></span>
+                            <button id="btn-weiter" type="button" aria-label="Nächster Tag">&rsaquo;</button>
+                        </div>
+                        <div id="zeiten_kontainer"></div>
+                        <p class="hinweis">Grün = frei. Grau = belegt oder nicht mehr buchbar.</p>
+                    </div>
+                </section>
+            </div>
+
+            <aside id="buchung_kontainer" class="karte zusammenfassung-karte">
+                <h2 class="schritt-titel">4 · Ihre Buchung</h2>
+                <dl id="zusammenfassung">
+                    <dt>Leistung</dt><dd id="z_leistung">-</dd>
+                    <dt>Person</dt><dd id="z_person">-</dd>
+                    <dt>Termin</dt><dd id="z_termin">-</dd>
+                    <dt>Dauer</dt><dd id="z_dauer">-</dd>
+                    <dt>Preis</dt><dd id="z_preis">-</dd>
+                </dl>
+
+                <div id="frage_kontainer" hidden>
+                    <p>Waren Sie schon einmal bei uns?</p>
+                    <div class="knopf-reihe">
+                        <button id="btn_ja" class="knopf knopf-hell" type="button">Ja</button>
+                        <button id="btn_nein" class="knopf knopf-hell" type="button">Nein</button>
+                    </div>
+                </div>
+
+                <form id="buchung_formular" hidden>
+                    <div id="feld_name" class="feld">
+                        <label for="kunde_name">Name</label>
+                        <input id="kunde_name" type="text" maxlength="45" autocomplete="name">
+                    </div>
+                    <div id="feld_telefon" class="feld">
+                        <label for="telefonnummer">Telefon</label>
+                        <input id="telefonnummer" type="tel" maxlength="20" autocomplete="tel">
+                    </div>
+                    <div class="feld">
+                        <label for="mail">E-Mail</label>
+                        <input id="mail" type="email" maxlength="45" autocomplete="email" required>
+                    </div>
+                    <button id="btn_buchen" class="knopf knopf-breit" type="submit">Termin verbindlich buchen</button>
+                </form>
+
+                <div id="meldung" role="status"></div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="fuss">
+        <div>© Schnittpunkt 2020-2026</div>
+        <div>AGB</div>
+        <div>Datenschutz</div>
+        <div>Impressum</div>
+        <a href="salon_logging.html">Salon-Bereich</a>
+    </footer>
+</body>
+
+</html>
