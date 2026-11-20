@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon-Bereich · Anmelden</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/salon_logging.js" type="module"></script>
+</head>
+
+<body>
+    <header class="kopf">
+        <a class="logo" href="index.html">Schnitt<span>punkt</span></a>
+        <nav>
+            <a href="index.html">Zur Startseite</a>
+        </nav>
+    </header>
+
+    <main class="inhalt login">
+        <section class="karte login-karte">
+            <h1>Salon-Bereich</h1>
+            <p>Nur für das Team. Bitte melden Sie sich mit dem Salon-Passwort an.</p>
+            <form id="login_formular">
+                <div class="feld">
+                    <label for="passwort">Passwort</label>
+                    <input id="passwort" type="password" autocomplete="current-password" required>
+                </div>
+                <button id="btn_anmelden" class="knopf knopf-breit" type="submit">Anmelden</button>
+            </form>
+            <div id="meldung" role="status"></div>
+        </section>
+    </main>
+
+    <footer class="fuss">
+        <div>© Schnittpunkt 2020-2026</div>
+        <div>AGB</div>
+        <div>Datenschutz</div>
+        <div>Impressum</div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon-Bereich · Schnittpunkt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/salon.js" type="module"></script>
+</head>
+
+<body>
+    <header class="kopf">
+        <a class="logo" href="index.html">Schnitt<span>punkt</span></a>
+        <nav class="reiter">
+            <button id="reiter_tag" class="reiter-knopf aktiv" type="button">Tagesübersicht</button>
+            <button id="reiter_leistungen" class="reiter-knopf" type="button">Leistungen</button>
+            <button id="btn_abmelden" class="reiter-knopf abmelden" type="button">Abmelden</button>
+        </nav>
+    </header>
+
+    <main class="inhalt breit">
+        <div id="meldung" role="status"></div>
+
+        <section id="bereich_tag">
+            <div class="tag-leiste">
+                <button id="tag_zurueck" class="knopf knopf-hell" type="button">&lsaquo; Zurück</button>
+                <h1 id="tag_anzeige"></h1>
+                <div class="knopf-reihe">
+                    <button id="tag_heute" class="knopf knopf-hell" type="button">Heute</button>
+                    <button id="tag_weiter" class="knopf knopf-hell" type="button">Weiter &rsaquo;</button>
+                </div>
+            </div>
+            <p id="tag_zaehler" class="hinweis"></p>
+            <div id="spalten" class="spalten"></div>
+            <div class="legende">
+                <span class="punkt status-offen"></span> offen
+                <span class="punkt status-erledigt"></span> erledigt
+                <span class="punkt status-nicht-erschienen"></span> nicht erschienen
+                <span class="punkt status-storniert"></span> storniert
+            </div>
+        </section>
+
+        <section id="bereich_leistungen" hidden>
+            <div class="seitenkopf">
+                <h1>Leistungen</h1>
+                <p>Preis und Dauer ändern sich nur für neue Buchungen. Inaktive Leistungen sind online nicht mehr buchbar.</p>
+            </div>
+
+            <div class="karte">
+                <h2>Bestehende Leistungen</h2>
+                <div id="leistung_tabelle" class="leistung-tabelle"></div>
+            </div>
+
+            <div class="karte">
+                <h2>Neue Leistung anlegen</h2>
+                <form id="neue_leistung_formular" class="neue-leistung">
+                    <div class="feld">
+                        <label for="neu_name">Name</label>
+                        <input id="neu_name" type="text" maxlength="45" required>
+                    </div>
+                    <div class="feld">
+                        <label for="neu_dauer">Dauer (Min)</label>
+                        <input id="neu_dauer" type="number" min="5" step="5" required>
+                    </div>
+                    <div class="feld">
+                        <label for="neu_preis">Preis (€)</label>
+                        <input id="neu_preis" type="number" min="0" step="0.01" required>
+                    </div>
+                    <fieldset class="feld">
+                        <legend>Wer bietet die Leistung an?</legend>
+                        <div id="neu_personen" class="auswahl-liste"></div>
+                    </fieldset>
+                    <button class="knopf" type="submit">Leistung anlegen</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="fuss">
+        <div>© Schnittpunkt 2020-2026</div>
+        <div>Salon-Bereich</div>
+    </footer>
+</body>
+
+</html>
